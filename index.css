@@ -23,7 +23,7 @@ h2 {
     display: flex;
     justify-content: space-between; /* מרווח את הלוגו והקישורים */
     align-items: center;
-    background: #333; /* צבע רקע כהה לסרגל */
+    background:gray; /* צבע רקע כהה לסרגל */
     padding: 15px 30px;
     color: white;
     position: sticky;
