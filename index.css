@@ -25,6 +25,7 @@ body {
 }
 h2 {
     text-align: center;
+    font-size: 100px;
     margin-bottom: 30px;
     color: #1a3e6d; /* צבע כחול כהה לכותרות */
 }
@@ -102,6 +103,8 @@ h2 {
     text-align: center;
     padding: 120px 20px;
     color: white;
+    font-family: var(--font_modules_header), 'Frank Ruhl Libre', Arial, sans-serif;
+    font-size: 150px;
     /* הגדרת הרקע כולל הנתיב והגדרות התצוגה */
     background: url('./לאתר של חיים/תמונת רקע.jpg') center/cover no-repeat;
     /* שכבת צבע שקופה לשיפור קריאות הטקסט */
