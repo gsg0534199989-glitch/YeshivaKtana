@@ -1,0 +1,89 @@
+/* ------------------------------------ */
+/* סטטיסטיקות ותקציב (STATS & BUDGET)  */
+/* ------------------------------------ */
+
+.stats-section {
+    padding-top: 20px;
+    padding-bottom: 70px;
+    background-color: #f7f7f7; /* רקע מעט אפרפר */
+}
+
+/* כותרת החלק */
+.stats-title {
+    color: #4a4a4a;
+    font-weight: 300;
+    margin-bottom: 50px;
+}
+
+/* ------------------------------------ */
+/* כללי גלילה צדדית עבור הכרטיסים  */
+/* ------------------------------------ */
+
+.stats-container {
+    /* מאפשר גלילה צדדית רק בתוך הקונטיינר הזה */
+    overflow-x: auto; 
+    /* מבטל שבירת שורה: חיוני לגלילה! */
+    white-space: nowrap; 
+    /* מבטל גלילה אנכית (אם יש הרבה מדי כרטיסים) */
+    overflow-y: hidden;
+    /* מרווח קטן כדי שסרגל הגלילה לא יידבק לקצה */
+    padding-bottom: 15px; 
+}
+
+/* עיצוב כל כרטיס סטטיסטיקה */
+.stat-card {
+    /* חיוני לגלילה צדדית: מונע מהכרטיס לשבור שורה */
+    display: inline-block; 
+    /* קובע רוחב קבוע לכרטיס כדי ליצור גלילה */
+    width: 250px; 
+    
+    background: white;
+    padding: 30px 15px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* צל עדין */
+    border-top: 1px solid #f0f0f0; 
+    margin-right: 20px; /* מרווח בין הכרטיסים */
+    transition: transform 0.3s ease; 
+    /* מסיר את flex: 1; שהיה בקוד הישן כדי לעבוד עם גלילה צדדית */
+}
+
+.stat-card:hover {
+    /* אפקט הרמה קל במעבר עכבר */
+    transform: translateY(-5px); 
+}
+
+/* עטיפת האייקון */
+.icon-wrap {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* עיצוב אייקונים ספציפי ל-Font Awesome */
+.icon-wrap i {
+    font-size: 2.5rem; /* גודל האייקון */
+    color: #4a4a4a; /* צבע ברירת מחדל לאייקונים */
+}
+
+/* עיצוב מספר הסטטיסטיקה */
+.stat-number {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #4a4a4a; 
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+/* עיצוב תיאור הסטטיסטיקה */
+.stat-description {
+    font-size: 0.9rem;
+    color: #777;
+    margin: 0;
+    line-height: 1.4;
+    height: 3.6em; /* מוודא גובה קבוע לתיאור */
+    overflow: hidden;
+}
