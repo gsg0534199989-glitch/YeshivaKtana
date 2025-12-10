@@ -184,14 +184,14 @@ nav .donate-btn{
 }
 
 .contact-form button:hover {
-    background: #153255;
+    background:gray;
 }
 
 /* ------------------------------------ */
 /* פוטר (FOOTER)              */
 /* ------------------------------------ */
 .footer {
-    background: #1a3e6d;
+    background:gray;
     color: white;
     text-align: center;
     padding: 20px;
