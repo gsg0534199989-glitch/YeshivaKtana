@@ -1,0 +1,195 @@
+/* ------------------------------------ */
+/* עיצוב גלובלי (BODY)        */
+/* ------------------------------------ */
+body {
+    margin: 0;
+    /* ודא שפונט "Assistant" זמין. אם לא, הסר את השורה הזו */
+    font-family: "Assistant", sans-serif; 
+    background: #fafafa;
+    color: #333;
+    line-height: 1.6;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #1a3e6d; /* צבע כחול כהה לכותרות */
+}
+
+/* ------------------------------------ */
+/* תפריט וניווט (HEADER & NAV)*/
+/* ------------------------------------ */
+.header {
+    display: flex;
+    justify-content: space-between; /* מרווח את הלוגו והקישורים */
+    align-items: center;
+    background: #333; /* צבע רקע כהה לסרגל */
+    padding: 15px 30px;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* ודא שהתפריט נשאר למעלה בגלילה */
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 25px; /* מרווח אחיד בין הקישורים */
+}
+
+.logo img {
+    height: 110px; /* גובה הלוגו */
+    width: auto;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 0;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: #ffcc00; /* צבע הדגשה בריחוף */
+}
+
+/* ------------------------------------ */
+/* באנר ראשי (HERO)            */
+/* ------------------------------------ */
+.hero {
+    text-align: center;
+    padding: 120px 20px;
+    color: white;
+    /* הגדרת הרקע כולל הנתיב והגדרות התצוגה */
+    background: url('./לאתר של חיים/תמונת רקע.jpg') center/cover no-repeat;
+    
+    /* שכבת צבע שקופה לשיפור קריאות הטקסט */
+    background-color: rgba(0, 0, 0, 0.4); 
+    background-blend-mode: multiply; 
+}
+
+/* ------------------------------------ */
+/* קטעי תוכן (SECTIONS)       */
+/* ------------------------------------ */
+.section {
+    width: 80%;
+    margin: auto;
+    padding: 50px 0;
+    max-width: 1100px;
+}
+
+/* ------------------------------------ */
+/* גלריה (GALLERY)            */
+/* ------------------------------------ */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.gallery img {
+    height: 300px; /* גובה קבוע לכל התמונות */
+    width: 100%;
+    object-fit: cover; /* חיתוך התמונה כדי לכסות את השטח */
+    border-radius: 10px;
+}
+
+/* ------------------------------------ */
+/* אירועים (EVENTS)            */
+/* ------------------------------------ */
+.events {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.event-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    box-shadow: 0 4px 10px #00000020;
+    text-align: center;
+}
+
+/* ------------------------------------ */
+/* תרומות (DONATIONS)         */
+/* ------------------------------------ */
+#donations {
+    text-align: center;
+    background: #f0f0f0; /* רקע בהיר להדגשה */
+    border-top: 5px solid #1a3e6d;
+    padding: 60px 0;
+}
+
+#donations p {
+    max-width: 700px;
+    margin: 15px auto;
+}
+
+/* כפתור התרומה הגדול */
+.big-donate-btn {
+    display: inline-block;
+    background: #d12f2f; /* צבע אדום בולט */
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 700;
+    padding: 15px 40px;
+    margin-top: 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 6px 15px rgba(209, 47, 47, 0.4);
+}
+
+.big-donate-btn:hover {
+    background: #b82a2a;
+    transform: translateY(-2px);
+}
+
+/* ------------------------------------ */
+/* צור קשר (CONTACT)          */
+/* ------------------------------------ */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin: auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+}
+
+.contact-form button {
+    background: #1a3e6d;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.contact-form button:hover {
+    background: #153255;
+}
+
+/* ------------------------------------ */
+/* פוטר (FOOTER)              */
+/* ------------------------------------ */
+.footer {
+    background: #1a3e6d;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
