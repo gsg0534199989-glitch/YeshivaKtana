@@ -4,7 +4,7 @@
 body {
     margin: 0;
     /* ודא שפונט "Assistant" זמין. אם לא, הסר את השורה הזו */
-    font-family: "Assistant", sans-serif; 
+        font-family: var(--font_modules_header), 'Frank Ruhl Libre', Arial, sans-serif;
     background: #fafafa;
     color: #333;
     line-height: 1.6;
