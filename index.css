@@ -50,20 +50,20 @@ h2 {
     transition: color 0.3s;
 }
 
-/* כלל מעודכן: דוחף את כפתור התרומה ואת כפתור השפה לקצה השמאלי 
+/* כלל מעודכן: דוחף את כפתור התרומה ואת כפתור השפה לקצה השמאלי */
 .nav #donate-btn {
     background: #d12f2f;
     padding: 8px 12px;
     border-radius: 5px;
-    /* הכלל הקריטי שמפריד את הכפתורים משאר הניווט 
+    /* הכלל הקריטי שמפריד את הכפתורים משאר הניווט */
     margin-inline-start: auto; 
-    /* מרווח בין כפתור התרומה לכפתור השפה *
+    /* מרווח בין כפתור התרומה לכפתור השפה */
     margin-inline-end: 10px; 
 }
 
-/* הוספת עיצוב לכפתור החלפת השפה 
+/* הוספת עיצוב לכפתור החלפת השפה */
 .lang-switch-btn {
-    background: #1a3e6d; /* צבע כחול כהה 
+    background: #1a3e6d; /* צבע כחול כהה */
     padding: 8px 12px;
     border-radius: 5px;
     font-weight: bold;
@@ -71,9 +71,9 @@ h2 {
     text-decoration: none; 
     transition: background 0.3s;
 }
-*/
+
 .lang-switch-btn:hover {
-    background: #0056b3;
+    background: #d12f2f;
 }
 /* סוף הוספת עיצוב לכפתור החלפת השפה */
 
