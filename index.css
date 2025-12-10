@@ -5,12 +5,24 @@ body {
     margin: 0;
     /* ודא שפונט "Assistant" זמין. אם לא, הסר את השורה הזו */
     font-family: var(--font_modules_header), 'Frank Ruhl Libre', Arial, sans-serif;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     background: #fafafa;
     color: #333;
     line-height: 1.6;
 }
-
+.page-title {
+  /* הגדלת גודל הכתב */
+  font-size: 3em; 
+  
+  /* הדגשת הכתב */
+  font-weight: bold; 
+  
+  /* צבע הכתב עצמו (לבן, כדי שהצל יבלוט) */
+  color: #FFFFFF; 
+  
+  /* יצירת הצללה */
+  text-shadow: 
+    3px 3px 6px rgba(0, 0, 0, 0.7); /* צל: 3px ימין, 3px למטה, 6px טשטוש, שחור כהה */
+}
 h2 {
     text-align: center;
     margin-bottom: 30px;
