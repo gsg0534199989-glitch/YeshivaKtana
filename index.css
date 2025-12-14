@@ -98,37 +98,17 @@ h2 {
 /* ------------------------------------ */
 /* באנר ראשי (HERO)            */
 /* ------------------------------------ */
-/* .hero {
+ .hero {
     text-align: center;
-    padding: 120px 20px;
+    padding: 20px 10px;
     color: white;
     font-family: var(--font_modules_header), 'Frank Ruhl Libre', Arial, sans-serif;
-    font-size: 150px; 
+    font-size: 15px; 
     background: url('./לאתר של חיים/תמונת רקע.jpg') center/cover no-repeat;
     background-color: rgba(0, 0, 0, 0.4); 
     background-blend-mode: multiply; 
-} */
-.hero {
-    /* 1. מבנה וגודל - גובה האלמנט ביחס לגובה המסך */
-    text-align: center;
-    min-height: 67vh; /* כשני שליש מגובה המסך */
-    padding: 80px 20px; /* ריווח פנימי ששומר על גמישות */
-    
-    /* 2. עיצוב הטקסט (השינוי הקריטי כאן!) */
-    color: white;
-    font-family: var(--font_modules_header), 'Frank Ruhl Libre', Arial, sans-serif;
-    
-    /* גודל פונט יחסי: 10vw = 10% מרוחב המסך. זה יאזן את הטקסט. */
-    font-size: 10vw; 
-    
-    /* 3. הגדרות הרקע */
-    background-image: url('./לאתר של חיים/תמונת רקע.jpg');
-    background-position: center;
-    background-size: cover; 
-    background-repeat: no-repeat; 
-    background-color: rgba(0, 0, 0, 0.4); 
-    background-blend-mode: multiply; 
-}
+} 
+
 /* ------------------------------------ */
 /* קטעי תוכן (SECTIONS)       */
 /* ------------------------------------ */
