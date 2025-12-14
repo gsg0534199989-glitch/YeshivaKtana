@@ -135,7 +135,26 @@ h2 {
     object-fit: cover; 
     border-radius: 10px;
 }
-
+/* החלק הכי חשוב: הסתרת התמונות הנוספות בהתחלה */
+.hidden-images {
+    display: none; 
+}
+/* עיצוב הכפתור */
+#loadMoreButton {
+    display: block; /* כדי שהכפתור יתפוס שורה שלמה */
+    margin: 20px auto; /* מרכוז הכפתור */
+    padding: 10px 25px;
+    background-color: #007bff; /* כחול לדוגמה */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+#loadMoreButton:hover {
+    background-color: #0056b3;
+}
 /* ------------------------------------ */
 /* אירועים (EVENTS)            */
 /* ------------------------------------ */
