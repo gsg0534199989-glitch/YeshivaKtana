@@ -103,7 +103,7 @@ h2 {
     padding: 20px 10px;
     color: white;
     font-family: var(--font_modules_header), 'Frank Ruhl Libre', Arial, sans-serif;
-    font-size: 80px; 
+    font-size: 40px; 
     background: url('./לאתר של חיים/תמונת רקע.jpg') center/cover no-repeat;
     background-color: rgba(0, 0, 0, 0.4); 
     background-blend-mode: multiply; 
