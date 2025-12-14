@@ -129,16 +129,29 @@ h2 {
     gap: 15px;
 }
 
-.gallery img {
-    height: 300px; 
-    width: 100%;
-    object-fit: cover; 
-    border-radius: 10px;
+/* עיצוב כללי למיכלי הגלריה */
+.gallery-container {
+    display: flex; /* מסדר את התמונות בשורה */
+    flex-wrap: wrap; /* מאפשר לתמונות לעבור לשורה הבאה אם אין מקום */
+    gap: 15px; /* רווח בין התמונות */
+    justify-content: center; /* ממקם את התמונות במרכז המיכל */
+    margin-bottom: 20px;
 }
+
+/* הגדרת גודל התמונות (כדי שיהיה אחיד ויפה) */
+.gallery-container img {
+    width: 250px; /* גודל רוחב לדוגמה, שנה לפי הצורך */
+    height: 180px; /* גובה קבוע לדוגמה */
+    object-fit: cover; /* חותך את התמונה כדי שתתאים לגודל, מבלי למתוח אותה */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
 /* החלק הכי חשוב: הסתרת התמונות הנוספות בהתחלה */
 .hidden-images {
     display: none; 
 }
+
 /* עיצוב הכפתור */
 #loadMoreButton {
     display: block; /* כדי שהכפתור יתפוס שורה שלמה */
@@ -152,6 +165,7 @@ h2 {
     font-size: 16px;
     transition: background-color 0.3s;
 }
+
 #loadMoreButton:hover {
     background-color: #0056b3;
 }
