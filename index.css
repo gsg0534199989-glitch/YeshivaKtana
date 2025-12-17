@@ -1,26 +1,19 @@
 /* ------------------------------------ */
 /* עיצוב גלובלי (BODY)        */
 /* ------------------------------------ */
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@700&family=Heebo:wght@400;700&display=swap');
 body {
     margin: 0;
-    font-family: var(--font_modules_header), 'Frank Ruhl Libre', Arial, sans-serif;
+    font-family: Arial, sans-serif;
     background: #fafafa;
     color: #333;
     line-height: 1.6;
-}
-
-.page-title {
-    /* הגדרות ההצללה המקוריות */
-    font-size: 3em; 
-    font-weight: bold; 
-    color: #FFFFFF; 
-    text-shadow: 
-        3px 3px 6px rgba(0, 0, 0, 0.7); 
+      font-family: var(--font_modules_header), 'Frank Ruhl Libre', Arial, sans-serif;
 }
 
 h2 {
     text-align: center;
-    font-size: 100px; /* גדול מאוד, יוקטן במובייל */
+    font-size: 50px; 
     margin-bottom: 30px;
     color: #1a3e6d; 
 }
@@ -44,7 +37,7 @@ h2 {
     display: flex;
     align-items: center;
     gap: 25px; 
-    transition: transform 0.3s ease-out; /* הוסף טרנזישן לתפריט במובייל */
+    transition: transform 0.3s ease-out;
 }
 
 .logo img {
@@ -65,10 +58,10 @@ h2 {
     display: none; 
     font-size: 30px;
     cursor: pointer;
-    order: 3; /* מיקום לצד הכפתורים */
+    order: 3;
 }
 
-/* כפתור תרומה ושפה (דוחפים שמאלה) */
+/* כפתור תרומה ושפה */
 .nav #donate-btn {
     background: #d12f2f;
     padding: 8px 12px;
@@ -96,18 +89,85 @@ h2 {
 }
 
 /* ------------------------------------ */
-/* באנר ראשי (HERO)            */
+/* באנר ראשי (HERO) - סליידר רקע קבוע            */
 /* ------------------------------------ */
- .hero {
-    text-align: center;
-    padding: 20px 10px;
-    color: white;
-    font-family: var(--font_modules_header), 'Frank Ruhl Libre', Arial, sans-serif;
-    font-size: 35px; 
-    background: url('./לאתר של חיים/תמונת רקע.jpg') center/cover no-repeat;
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    min-height: 400px; 
+}
+
+/* מיכל תמונות הרקע */
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+.hero-background img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 2s ease-in-out; 
+}
+
+.hero-background img.active {
+    opacity: 1;
+}
+
+/* שכבת צבע מעל הרקע */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.4); 
-    background-blend-mode: multiply; 
-} 
+    z-index: 20;
+}
+
+/* עיצוב הטקסט הקבוע */
+.hero-content-static {
+    position: relative; 
+    z-index: 30; 
+    height: 100%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* יישור הטקסט למרכז */
+    color: white;
+    padding: 10px 20px;
+    transform: translateY(70px); /* מעלה את הבלוק כולו ב-15% מגובהו */
+}
+
+/* גדלי טקסט בדסקטופ */
+.hero-content-static .page-title {
+    font-size: 3.5em; 
+    font-weight: 700; 
+    margin-bottom: 0.5em; 
+}
+
+.hero-content-static p {
+    font-size: 1.8em; 
+    font-weight: 400; 
+}
+
+/* אפקט הצללה על הטקסט */
+.hero-content-static .page-title,
+.hero-content-static p {
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+    margin: 10px 0;
+}
 
 /* ------------------------------------ */
 /* קטעי תוכן (SECTIONS)       */
@@ -117,47 +177,46 @@ h2 {
     margin: auto;
     padding: 50px 0;
     max-width: 1100px;
+    direction: rtl; 
+    text-align: right;
+}
+/* אם אין לך כלל כללי ל-p, הוסיפי אותו כאן */
+p {
+    font-size: 23px; /* או 18px */
+    line-height: 1.7; /* מומלץ להגדיל גם את מרווח השורה */
 }
 
 /* ------------------------------------ */
 /* גלריה (GALLERY)            */
 /* ------------------------------------ */
-.gallery {
-    display: grid;
-    /* 3 עמודות בדסקטופ */
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 15px;
-}
-
-/* עיצוב כללי למיכלי הגלריה */
 .gallery-container {
-    display: flex; /* מסדר את התמונות בשורה */
-    flex-wrap: wrap; /* מאפשר לתמונות לעבור לשורה הבאה אם אין מקום */
-    gap: 15px; /* רווח בין התמונות */
-    justify-content: center; /* ממקם את התמונות במרכז המיכל */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
     margin-bottom: 20px;
 }
 
-/* הגדרת גודל התמונות (כדי שיהיה אחיד ויפה) */
-.gallery-container img {
-    width: 250px; /* גודל רוחב לדוגמה, שנה לפי הצורך */
-    height: 180px; /* גובה קבוע לדוגמה */
-    object-fit: cover; /* חותך את התמונה כדי שתתאים לגודל, מבלי למתוח אותה */
-    border-radius: 5px;
+/* עיצוב פריטי הגלריה (תמונות וסרטונים) */
+.gallery-container img, .gallery-container video {
+    width: 30%; 
+    min-width: 250px; 
+    height: 180px; 
+    object-fit: cover; 
+    border-radius: 20px; 
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* החלק הכי חשוב: הסתרת התמונות הנוספות בהתחלה */
-.hidden-images {
+/* הסתרת התוכן הנוסף בהתחלה */
+.hidden-group {
     display: none; 
 }
 
-/* עיצוב הכפתור */
 #loadMoreButton {
-    display: block; /* כדי שהכפתור יתפוס שורה שלמה */
-    margin: 20px auto; /* מרכוז הכפתור */
+    display: block; 
+    margin: 20px auto; 
     padding: 10px 25px;
-    background-color: #007bff; /* כחול לדוגמה */
+    background-color: #007bff; 
     color: white;
     border: none;
     border-radius: 5px;
@@ -169,6 +228,7 @@ h2 {
 #loadMoreButton:hover {
     background-color: #0056b3;
 }
+
 /* ------------------------------------ */
 /* אירועים (EVENTS)            */
 /* ------------------------------------ */
@@ -185,131 +245,18 @@ h2 {
     border-radius: 10px;
     width: 250px;
     box-shadow: 0 4px 10px #00000020;
-    text-align: center;
+    text-align: right; /* יישור לימין */
 }
 
 /* ------------------------------------ */
-/* תרומות, צור קשר ופוטר - ללא שינוי מהותי */
+/* צור קשר (CONTACT)              */
 /* ------------------------------------ */
-/* ... (המשך הסגנונות שלך ל-donations, contact-form, footer) ... */
-
-
-/* ---------------------------------------------------- */
-/* 📱 שאילתות מדיה - רספונסיביות למכשירים קטנים (עד 768px) */
-/* ---------------------------------------------------- */
-
-@media screen and (max-width: 768px) {
-    
-    /* כותרות */
-    h2 {
-        font-size: 45px; 
-    }
-    .page-title {
-        /* מקטין את הכותרת הראשית */
-        font-size: 2em; 
-    }
-    
-    /* תפריט וניווט */
-    .header {
-        padding: 10px 15px;
-    }
-    .logo img {
-        height: 70px; 
-    }
-    
-    /* הצגת כפתור ההמבורגר */
-    .menu-toggle {
-        display: block; 
-    }
-    
-    /* הסתרת הניווט הראשי והפיכתו לתפריט אנכי */
-    .nav {
-        /* מסתיר את התפריט מהמסך */
-        position: absolute; 
-        top: 90px;
-        left: 0;
-        width: 100%;
-        background: gray;
-        flex-direction: column;
-        align-items: stretch;
-        /* טריק להסתרה: */
-        transform: translateX(100%); 
-    }
-    
-    /* פתיחת התפריט באמצעות JS (כשהקלאס active מתווסף) */
-    .nav.active {
-        transform: translateX(0);
-    }
-    
-    .nav a {
-        padding: 15px 20px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    /* כפתורים ניידים */
-    .nav #donate-btn, .lang-switch-btn {
-        margin: 10px 20px;
-        text-align: center;
-        width: auto;
-    }
-    
-    /* באנר ראשי */
-    .hero {
-        padding: 80px 20px; 
-        font-size: 40px; 
-    }
-    
-    /* סקשנים ותוכן */
-    /* --- עיצוב בסיסי כללי --- */
-.section {
-    padding: 40px 20px;
-    margin: 20px auto;
-    max-width: 600px; /* רוחב מוגדר כדי שהבלוקים לא יהיו רחבים מדי */
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    direction: rtl; /* יישור מימין לשמאל */
-    font-family: Arial, sans-serif;
-}
-
-h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-}
-
-/* --- 1. עיצוב חלק התרומות (Donations) --- */
-
-#donations {
-    /* נותנים רקע בהיר (לבן/אפור) כדי שהכפתור האדום יבלוט */
-    background-color: #ffffff; 
-    color: #333;
-}
-
-/* עיצוב כפתור התרומה: אדום חזק */
-#donate-link {
-    display: inline-block;
-    padding: 15px 30px;
-    margin-top: 20px;
-    /* הצבע האדום המבוקש */
-    background-color: #d12f2f; 
-    color: white;
-    text-decoration: none;
-    font-size: 1.2em;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-#donate-link:hover {
-    background-color: #a02525; /* אדום כהה יותר בריחוף */
-}
-
-/* --- 2. עיצוב חלק צור קשר (Contact) --- */
 
 #contact {
-    /* רקע כחול כהה כפי שביקשת */
     background-color: #2c3e50; 
     color: white;
+    border-radius: 20px;
+    padding: 50px;
 }
 
 #contact h2 {
@@ -331,17 +278,12 @@ h2 {
     font-size: 1em;
     width: 100%;
     box-sizing: border-box; 
-    text-align: right; /* יישור טקסט שמוקלד מימין */
-}
-
-.contact-form textarea {
-    resize: vertical;
-    min-height: 100px;
+    text-align: right;
 }
 
 .contact-form button[type="submit"] {
     padding: 12px 20px;
-    background-color: #3498db; /* כפתור כחול בהיר שמשתלב יפה ברקע הכהה */
+    background-color: #3498db;
     color: white;
     border: none;
     border-radius: 5px;
@@ -355,14 +297,105 @@ h2 {
     background-color: #2980b9;
 }
 
-    /* גלריה - מעבר לפריסה של עד 2 עמודות */
-    .gallery {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+/* ------------------------------------ */
+/* FOOTER                              */
+/* ------------------------------------ */
+.footer{
+    background:gray; 
+    padding: 10px 30px;
+    color: white;
+}
+
+/* ---------------------------------------------------- */
+/* 📱 שאילתות מדיה - רספונסיביות למכשירים קטנים (עד 768px) */
+/* ---------------------------------------------------- */
+
+@media screen and (max-width: 768px) {
+    
+    /* --- כותרות וטקסט גלובלי --- */
+    h2 {
+        font-size: 2em; 
+    }
+
+    /* --- ניווט (ההמבורגר) --- */
+    .header {
+        padding: 10px 15px;
+    }
+    .logo img {
+        height: 70px; 
+    }
+    .menu-toggle {
+        display: block; 
+    }
+    .nav {
+        position: absolute; 
+        top: 90px;
+        left: 0;
+        width: 100%;
+        background: gray;
+        flex-direction: column;
+        align-items: stretch;
+        transform: translateX(100%); 
+        transition: transform 0.3s ease-out;
+    }
+    .nav.active {
+        transform: translateX(0);
+    }
+    .nav a {
+        padding: 15px 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .nav #donate-btn, .lang-switch-btn {
+        margin: 10px 20px;
+        text-align: center;
+        width: auto;
     }
     
-    /* כרטיסי אירועים תופסים רוחב מלא/כמעט מלא */
+    /* --- HERO SECTION --- */
+    .hero {
+        padding: 60px 20px; 
+        min-height: 350px;
+    }
+    .hero-content-static .page-title {
+        font-size: 2.2em;
+    }
+    .hero-content-static p {
+        font-size: 1.2em;
+    }
+
+    /* --- גלריה (Gallery) --- */
+    .gallery-container {
+        gap: 10px;
+    }
+    
+    .gallery-container img,
+    .gallery-container video {
+        width: 45%; /* שתי תמונות בשורה */
+        min-width: unset;
+        height: auto;
+    }
+    
+    /* --- אירועים (EVENTS) --- */
+    .events {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
     .event-card {
-        width: 90%; 
-        max-width: 350px;
+        width: 90%;
+    }
+
+    /* --- סקשנים כלליים --- */
+    .section {
+        width: 100%;
+        max-width: none; 
+        padding: 30px 15px;
+        margin: 15px auto;
+        text-align: right;
+    }
+    
+    /* תיקון סקשן צור קשר (Contact) */
+    #contact {
+        padding: 30px 20px;
     }
 }
