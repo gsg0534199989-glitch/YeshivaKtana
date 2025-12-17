@@ -252,6 +252,43 @@ p {
 /* צור קשר (CONTACT)              */
 /* ------------------------------------ */
 
+.big-donate-btn {
+    /* הופך את הקישור לאזור מלבני שניתן לעצב */
+    display: inline-block; 
+    
+    /* צבע רקע: אדום בוהק (Crimson) */
+    background-color: #dc143c; 
+    
+    /* צבע טקסט: לבן */
+    color: white; 
+    
+    /* ריווח פנימי גדול (מקבל גובה ורוחב לכפתור) */
+    padding: 15px 30px; 
+    
+    /* מסיר את הקו התחתי של הקישור */
+    text-decoration: none; 
+    
+    /* מעגל מעט את הפינות */
+    border-radius: 8px; 
+    
+    /* גודל ומשקל הגופן */
+    font-size: 22px; 
+    font-weight: bold;
+    
+    /* מבטיח מעבר צבע חלק בריחוף עכבר */
+    transition: background-color 0.3s ease; 
+    
+    /* הוספת צל קל כדי שיבלוט */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* אפקט ריחוף עכבר (Hover) */
+.big-donate-btn:hover {
+    /* צבע אדום כהה יותר כאשר העכבר מרחף מעליו */
+    background-color: #a31030; 
+    /* מרים מעט את הכפתור */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
 #contact {
     background-color: #2c3e50; 
     color: white;
