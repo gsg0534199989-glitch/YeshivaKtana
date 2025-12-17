@@ -26,8 +26,14 @@
     </header>
 
     <section class="hero">
+        <div class="hero-background">
+        <img src="./לאתר של חיים/תמונת רקע.jpg" alt="רקע 1" class="active"> 
+        <img src="./לאתר של חיים/תמונת רקע 1.JPG" alt="רקע 2">
+        </div>
+        <div class="hero-content-static">
         <h1 class="page-title">ישיבה קטנה – על שם הגאון הרב יצחק הוטנר</h1>
         <p>מקום של תורה, יראת שמיים וגדילה רוחנית</p>
+    </div>
     </section>
 
     <section id="about" class="section">
@@ -36,9 +42,11 @@
             ישיבת זרע יצחק החדשה הוקמה על ידי הר' חיים משה גולדשטיין שליט"א ועמיתו הר' דב רודניק שליט"א ,
             בעידודו ובעצתו של הגאון הגדול רבי יונתן דיויד שליט"א ראש ישיבת פחד יצחק, 
             ובהדרכתו האישית של תלמידו הג"ר חיים יצחק קפלן שליט"א משגיח של ישיבת חברון.
+            <br>
             הישיבה שמה למטרה את צמיחת הבחורים בתורה בעמקות ובעיון ישר,
             עם דגש מיוחד על מידות ויחס של בין אדם לחבירו,
             באוירה ישיבתית ובונה.
+            <br>
             הגאון הר' אברהם גולדשטיין ר"מ בישיבת התפוצות דיין ומו"צ בהר ציון מלוה את הישיבה מידי יום במסירת שיעור לכלל הבחורים,
             תוך דגש מיוחד על עמקות סברא בהלכה,
             ופעם בשבוע בשעות הערב בשיחת מוסר על גדלות האדם והשקפה בענייני השעה ומאורעות התקופה.
@@ -46,45 +54,44 @@
     </section>
 
     <section id="gallery" class="section">
-    <h2>תמונות</h2>
+    <h2>תמונות</h2> 
     
-    <div class="gallery-container visible-images">
-        <img src="./לאתר של חיים/1K4A1053.JPG" alt="תמונה 1">
-        <img src="./לאתר של חיים/1K4A1002.JPG" alt="תמונה 2">
-        <img src="./לאתר של חיים/1K4A1044.JPG" alt="תמונה 3">
-        <img src="./לאתר של חיים/IMG-20251120-WA0037.jpeg" alt="תמונה 4">
-        <img src="./לאתר של חיים/IMG-20251120-WA0039.jpeg" alt="תמונה 5">
-        <img src="./לאתר של חיים/IMG-20251120-WA0023.jpeg" alt="תמונה 6">
+    <div class="gallery-container">
+        <img src="./לאתר של חיים/תמונה 3.JPG" alt="תמונה 1">
+        <img src="./לאתר של חיים/תמונה 12.jpeg" alt="תמונה 2">
+        <img src="./לאתר של חיים/תמונה 1.JPG" alt="תמונה 3">
+        <img src="./לאתר של חיים/תמונה 14.jpeg" alt="תמונה 4">
+        <img src="./לאתר של חיים/תמונה 8.JPG" alt="תמונה 5">
+        <img src="./לאתר של חיים/תמונה 7.JPG" alt="תמונה 6">
     </div>
 
-    <div class="gallery-container hidden-images" id="moreImages">
-        <img src="./לאתר של חיים/IMG-20251120-WA0038.jpeg" alt="תמונה 7">
-        <img src="./לאתר של חיים/IMG-20251120-WA0027.jpeg" alt="תמונה 8">
-        <img src="./לאתר של חיים/IMG-20251120-WA0031.jpeg" alt="תמונה 9">
-        <img src="./לאתר של חיים/IMG-20251120-WA0034.jpeg" alt="תמונה 10">
-        <img src="./לאתר של חיים/IMG-20251120-WA0038.jpeg" alt="תמונה 11">
-        <img src="./לאתר של חיים/IMG-20251120-WA0035.jpeg" alt="תמונה 12">
+    <div class="gallery-container hidden-group"> 
+        <img src="./לאתר של חיים/תמונה 2.JPG" alt="תמונה 7">
+        <img src="./לאתר של חיים/תמונה 9.JPG" alt="תמונה 8">
+        <img src="./לאתר של חיים/תמונה 6.JPG" alt="תמונה 9">
+        <img src="./לאתר של חיים/תמונה 5.JPG" alt="תמונה 10">
+        <img src="./לאתר של חיים/תמונה 10.JPG" alt="תמונה 11">
+        <img src="./לאתר של חיים/תמונה 11.JPG" alt="תמונה 12">
     </div>
 
-    <button onclick="showMore()" id="loadMoreButton">
-        לצפייה  בתמונות נוספות
-    </button>
+    <div class="gallery-container hidden-group"> 
+        <video src="./לאתר של חיים/סרטון 1.MP4" controls></video>
+        <video src="./לאתר של חיים/סרטון 2.MP4" controls></video>
+    </div>
 
+   <button 
+    onclick="loadNextBatch()" 
+    id="loadMoreButton"
+    
+    data-step1="לצפייה בתמונות נוספות"
+    data-step2="צפייה בסרטונים"
+    data-done="כל הגלריה הוצגה"
+     data-step3-hide="הסתר תמונות וסרטונים נוספים"
+>
+    לצפייה בתמונות נוספות
+</button>
+    
 </section>
-
-    <section id="events" class="section">
-        <h2>אירועים וחדשות</h2>
-        <div class="events">
-            <div class="event-card">
-                <h3>שיעור פתיחה</h3>
-                <p>שיעור מרגש לרגל פתיחת הזמן.</p>
-            </div>
-            <div class="event-card">
-                <h3>מסיבת חנוכה</h3>
-                <p>אירוע משפחתי עם שירי חנוכה ודברי תורה.</p>
-            </div>
-        </div>
-    </section>
 
     <section class="stats-section section">
         <h2 class="stats-title">תקציב ישיבת זרע יצחק - שנת הלימודים תשפ"ו</h2>
@@ -95,13 +102,6 @@
                 </div>
                 <div class="stat-number" style="color: #d12f2f;">325,000 $</div>
                 <p class="stat-description">סה"כ הוצאות לשנת תשפ"ו</p>
-            </div>
-            <div class="stat-card">
-                <div class="icon-wrap green-desk">
-                    <i class="fas fa-sack-dollar fa-3x" style="color: #28a745;"></i> 
-                </div>
-                <div class="stat-number" style="color: #28a745;">215,937 $</div>
-                <p class="stat-description">סה"כ הכנסות צפויות לשנת תשפ"ו</p>
             </div>
             <div class="stat-card">
                 <div class="icon-wrap confetti">
@@ -167,31 +167,6 @@
                 <div class="stat-number">5,625 $</div>
                 <p class="stat-description">טיולים</p>
             </div>
-            <div class="stat-card">
-                <div class="icon-wrap green-desk"><i class="fas fa-graduation-cap fa-3x" style="color: #28a745;"></i></div>
-                <div class="stat-number" style="color: #28a745;">75,000 $</div>
-                <p class="stat-description">הכנסות משכר לימוד</p>
-            </div>
-            <div class="stat-card">
-                <div class="icon-wrap green-desk"><i class="fas fa-handshake fa-3x" style="color: #28a745;"></i></div>
-                <div class="stat-number" style="color: #28a745;">47,250 $</div>
-                <p class="stat-description">תקציבים קבועים</p>
-            </div>
-            <div class="stat-card">
-                <div class="icon-wrap green-desk"><i class="fas fa-donate fa-3x" style="color: #28a745;"></i></div>
-                <div class="stat-number" style="color: #28a745;">46,875 $</div>
-                <p class="stat-description">תרומות קטנות כללי</p>
-            </div>
-            <div class="stat-card">
-                <div class="icon-wrap green-desk"><i class="fas fa-funnel-dollar fa-3x" style="color: #28a745;"></i></div>
-                <div class="stat-number" style="color: #28a745;">25,000 $</div>
-                <p class="stat-description">תקציבים לא קבועים</p>
-            </div>
-            <div class="stat-card">
-                <div class="icon-wrap green-desk"><i class="fas fa-file-alt fa-3x" style="color: #28a745;"></i></div>
-                <div class="stat-number" style="color: #28a745;">21,875 $</div>
-                <p class="stat-description">הנחה בארנונא למוסד לימודים</p>
-            </div>
         </div>
     </section>
 
@@ -220,17 +195,11 @@
         </form>
     </section>
 
+    <br>
+
     <footer class="footer">
         כל הזכויות שמורות © ישיבה קטנה הרב יצחק הוטנר
     </footer>
-
-    <script>
-        const menuToggle = document.getElementById('menuToggle');
-        const mainNav = document.getElementById('mainNav');
-
-        menuToggle.addEventListener('click', () => {
-            mainNav.classList.toggle('active');
-        });
-    </script>
+    <script src="./index.js"></script>
 </body>
 </html>
