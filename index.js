@@ -55,8 +55,8 @@ function loadNextBatch() {
         // 4. עדכן את טקסט הכפתור בהתאם
         
         // אם הצגנו את התמונות (אינדקס 0): נכין את הכפתור לחשיפת הסרטונים (שלב 2)
-        if (nextGroupIndex === 0) {
-            button.innerHTML = getButtonText('step2');
+        // if (nextGroupIndex === 0) {
+        //     button.innerHTML = getButtonText('step2');
 
         // אם הצגנו את הסרטונים (אינדקס 1, והיא הקבוצה האחרונה):
         // נשנה את הטקסט ל"הסתר הכל" (שלב 3)
@@ -66,7 +66,7 @@ function loadNextBatch() {
         }
     } 
     // אין צורך ב-else נוסף, כי המצב של "הכל מוצג" מטופל כבר למעלה.
-}
+//}
 // **הפונקציה הזו נשארת זהה לגרסה שרק החליפה תמונות**
 
 function startBackgroundSlideshow() {
