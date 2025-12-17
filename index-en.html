@@ -27,8 +27,14 @@
     </header>
 
     <section class="hero">
-        <h1>A yeshiva Ktana named after the great Rabbi Yitzhak Hutner</h1>
+        <div class="hero-background">
+            <img src="./לאתר של חיים/תמונת רקע.jpg" alt="רקע 1" class="active"> 
+        <img src="./לאתר של חיים/תמונת רקע 1.JPG" alt="רקע 2">
+        </div>
+        <div class="hero-content-static">
+        <h1 class="page-title">A yeshiva Ktana named after the great Rabbi Yitzhak Hutner</h1>
         <p>A place of Torah, reverence for Heaven, and spiritual growth</p>
+        </div>
     </section>
 
     <section id="about" class="section">
@@ -48,22 +54,42 @@
     </section>
 
     <section id="gallery" class="section">
-        <h2>photos</h2>
-        <div class="gallery">
-            <img src="./לאתר של חיים/1K4A1053.JPG" alt="Image 1">
-            <img src="./לאתר של חיים/1K4A1002.JPG" alt="Image 2">
-            <img src="./לאתר של חיים/1K4A1044.JPG" alt="Image 3">
-            <img src="./לאתר של חיים/IMG-20251120-WA0037.jpeg" alt="Image 4">
-            <img src="./לאתר של חיים/IMG-20251120-WA0039.jpeg" alt="Image 5">
-            <img src="./לאתר של חיים/IMG-20251120-WA0023.jpeg" alt="Image 6">
-            <img src="./לאתר של חיים/IMG-20251120-WA0038.jpeg" alt="Image 7">
-            <img src="./לאתר של חיים/IMG-20251120-WA0027.jpeg" alt="Image 8">
-            <img src="./לאתר של חיים/IMG-20251120-WA0031.jpeg" alt="Image 9">
-            <img src="./לאתר של חיים/IMG-20251120-WA0034.jpeg" alt="Image 10">
-            <img src="./לאתר של חיים/IMG-20251120-WA0038.jpeg" alt="Image 11">
-            <img src="./לאתר של חיים/IMG-20251120-WA0035.jpeg" alt="Image 12">
-        </div>
-    </section>
+    <h2>photos</h2> 
+    
+    <div class="gallery-container">
+        <img src="./לאתר של חיים/תמונה 3.JPG" alt="תמונה 1">
+        <img src="./לאתר של חיים/תמונה 12.jpeg" alt="תמונה 2">
+        <img src="./לאתר של חיים/תמונה 1.JPG" alt="תמונה 3">
+        <img src="./לאתר של חיים/תמונה 14.jpeg" alt="תמונה 4">
+        <img src="./לאתר של חיים/תמונה 8.JPG" alt="תמונה 5">
+        <img src="./לאתר של חיים/תמונה 7.JPG" alt="תמונה 6">
+    </div>
+
+    <div class="gallery-container hidden-group"> 
+        <img src="./לאתר של חיים/תמונה 2.JPG" alt="תמונה 7">
+        <img src="./לאתר של חיים/תמונה 9.JPG" alt="תמונה 8">
+        <img src="./לאתר של חיים/תמונה 6.JPG" alt="תמונה 9">
+        <img src="./לאתר של חיים/תמונה 5.JPG" alt="תמונה 10">
+        <img src="./לאתר של חיים/תמונה 10.JPG" alt="תמונה 11">
+        <img src="./לאתר של חיים/תמונה 11.JPG" alt="תמונה 12">
+    </div>
+
+    <div class="gallery-container hidden-group"> 
+        <video src="./לאתר של חיים/סרטון 1.MP4" controls></video>
+        <video src="./לאתר של חיים/סרטון 2.MP4" controls></video>
+    </div>    
+   <button 
+    onclick="loadNextBatch()" 
+    id="loadMoreButton"
+    
+    data-step1="View more photos"
+    data-step2="View videos"
+    data-done="Gallery fully loaded"
+    data-step3-hide="Hide additional photos and videos"
+>
+    View more photos
+</button>
+</section>
 
     <section id="events" class="section">
         <h2>Events and News</h2>
@@ -90,22 +116,8 @@
                 <p class="stat-description">Total Expenses for the 5786 Academic Year</p>
             </div>
             <div class="stat-card">
-                <div class="icon-wrap green-desk">
-                    <i class="fas fa-sack-dollar fa-3x" style="color: #28a745;"></i> 
-                </div>
-                <div class="stat-number" style="color: #28a745;">215,937 $</div>
-                <p class="stat-description">Total Expected Income for the 5786 Academic Year</p>
-            </div>
-            <div class="stat-card">
                 <div class="icon-wrap confetti">
                     <i class="fas fa-chart-line fa-3x" style="color: #c99839;"></i> 
-                </div>
-                <div class="stat-number" style="color: #c99839;">109,063 $</div>
-                <p class="stat-description">The Remaining Financial Need (Deficit) to Close the Budget</p>
-            </div>
-            <div class="stat-card">
-                <div class="icon-wrap black-tie">
-                    <i class="fas fa-user-tie fa-3x"></i> 
                 </div>
                 <div class="stat-number">75,000 $</div>
                 <p class="stat-description">Faculty Salaries (Roshei Yeshiva/Rabbis)</p>
@@ -160,31 +172,6 @@
                 <div class="stat-number">5,625 $</div>
                 <p class="stat-description">Trips</p>
             </div>
-            <div class="stat-card">
-                <div class="icon-wrap green-desk"><i class="fas fa-graduation-cap fa-3x" style="color: #28a745;"></i></div>
-                <div class="stat-number" style="color: #28a745;">75,000 $</div>
-                <p class="stat-description">Tuition Income</p>
-            </div>
-            <div class="stat-card">
-                <div class="icon-wrap green-desk"><i class="fas fa-handshake fa-3x" style="color: #28a745;"></i></div>
-                <div class="stat-number" style="color: #28a745;">47,250 $</div>
-                <p class="stat-description">Regular Grants</p>
-            </div>
-            <div class="stat-card">
-                <div class="icon-wrap green-desk"><i class="fas fa-donate fa-3x" style="color: #28a745;"></i></div>
-                <div class="stat-number" style="color: #28a745;">46,875 $</div>
-                <p class="stat-description">General Small Donations</p>
-            </div>
-            <div class="stat-card">
-                <div class="icon-wrap green-desk"><i class="fas fa-funnel-dollar fa-3x" style="color: #28a745;"></i></div>
-                <div class="stat-number" style="color: #28a745;">25,000 $</div>
-                <p class="stat-description">Irregular Grants</p>
-            </div>
-            <div class="stat-card">
-                <div class="icon-wrap green-desk"><i class="fas fa-file-alt fa-3x" style="color: #28a745;"></i></div>
-                <div class="stat-number" style="color: #28a745;">21,875 $</div>
-                <p class="stat-description">Property Tax Discount for Educational Institution</p>
-            </div>
         </div>
     </section>
 
@@ -213,17 +200,10 @@
         </form>
     </section>
 
+    <br>
     <footer class="footer">
         All Rights Reserved © Yeshiva Ketana Rabbi Yitzchak Hutner
     </footer>
-
-    <script>
-        const menuToggle = document.getElementById('menuToggle');
-        const mainNav = document.getElementById('mainNav');
-
-        menuToggle.addEventListener('click', () => {
-            mainNav.classList.toggle('active');
-        });
-    </script>
+    <script src="./index.js"></script>
 </body>
 </html>
