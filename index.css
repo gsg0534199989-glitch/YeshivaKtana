@@ -209,9 +209,7 @@ p {
     line-height: 1.7;
 }
 
-/* ------------------------------------ */
-/* גלריה (GALLERY)            */
-/* ------------------------------------ */
+/* קונטיינר הגלריה */
 .gallery-container {
     display: flex;
     flex-wrap: wrap;
@@ -220,32 +218,42 @@ p {
     margin-bottom: 20px;
 }
 
-/* עיצוב פריטי הגלריה (תמונות וסרטונים) */
-.gallery-container img, .gallery-container video {
-    width: 30%; 
-    min-width: 250px; 
-    height: 180px; 
-    object-fit: cover; 
-    border-radius: 20px; 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+/* עיצוב אחיד לתמונות וסרטונים */
+.gallery-container img, 
+.gallery-container video {
+    /* חישוב של 3 בשורה פחות הרווחים (gap) */
+    width: calc(33.333% - 15px); 
+    min-width: 280px; /* מונע מהם להיות קטנים מדי במובייל */
+    height: 200px;    /* גובה קבוע לכולם */
+    object-fit: cover; /* חותך את השוליים כדי שלא יהיה עיוות */
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: block;
 }
 
-/* הסתרת התוכן הנוסף בהתחלה */
+/* הסתרת הקבוצה השנייה */
 .hidden-group {
-    display: none; 
+    display: none;
 }
 
+/* עיצוב הכפתור */
 #loadMoreButton {
-    display: block; 
-    margin: 20px auto; 
-    padding: 10px 25px;
-    background-color: #007bff; 
+    display: block;
+    margin: 30px auto;
+    padding: 12px 30px;
+    background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 50px; /* כפתור עגול ומודרני */
     cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.3s;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+#loadMoreButton:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); /* אפקט קטן בריחופ */
 }
 
 #loadMoreButton:hover {
@@ -436,4 +444,51 @@ p {
     #contact {
         padding: 30px 20px;
     }
+}
+/* 1. הסתרה מוחלטת במחשב */
+.mobile-quick-actions {
+    display: none;
+}
+
+/* 2. הגדרות רק לטלפונים (מסכים עד 768 פיקסלים) */
+@media (max-width: 768px) {
+    .mobile-quick-actions {
+        display: flex;
+        justify-content: space-around; /* רווח שווה בין הכפתורים */
+        align-items: center;
+        background-color: #ffffff;
+        padding: 10px;
+        border-bottom: 2px solid #eeeeee;
+        position: sticky; /* נשאר דבוק למעלה כשגוללים */
+        top: 0;
+        z-index: 1000; /* שיהיה מעל הכל */
+        gap: 10px;
+    }
+
+    .quick-btn {
+        flex: 1; /* שהכפתורים יתחלקו שווה ברוחב */
+        text-align: center;
+        padding: 12px 5px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 16px; /* גופן גדול וקריא למבוגרים */
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    /* עיצוב כפתור תרומה - בולט וצבעוני */
+    .donate-btn {
+        background-color: #28a745; /* ירוק */
+        color: white !important;
+    }
+
+    /* עיצוב כפתור תרגום - עדין יותר */
+    .translate-btn {
+        background-color: #f8f9fa;
+        color: #333 !important;
+        border: 1px solid #ccc;
+    }
+
+    /* הסתרת כפתור ה"המבורגר" המקורי אם הוא מפריע */
+    /* .navbar-toggler { display: none !important; } */
 }

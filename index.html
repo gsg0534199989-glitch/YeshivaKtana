@@ -9,10 +9,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
+    <div class="mobile-quick-actions">
+      <a href="#donations" class="big-donate-btn donate-nav-btn">לתרומה</a>
+      <a href="index-en.html" class="lang-switch-btn" title="Switch to English">English/עברית</a>
+    </div>
     <header class="header">
         <div class="menu-toggle" id="menuToggle">&#9776;</div>
         <nav class="nav" id="mainNav">
-            <div class="logo"><img src="./לאתר של חיים/ישיבה_לצעירים-removebg-preview.png" alt="לוגו הישיבה"></div>
+            <div class="logo"><img src="./assets/removebg-preview.png" alt="לוגו הישיבה"></div>
             
             <a href="#about">אודות</a>
             <a href="#gallery">גלריה</a>
@@ -26,11 +30,11 @@
 
     <section class="hero">
         <div class="hero-background">
-        <img src="./לאתר של חיים/תמונת רקע.jpg" alt="רקע 1" class="active"> 
-        <img src="./לאתר של חיים/תמונת רקע 1.JPG" alt="רקע 2">
+        <img src="./assets/backgrounPic1.jpg" alt="רקע 1" class="active"> 
+        <img src="./assets/backgroungPic.JPG" alt="רקע 2">
         </div>
         <div class="hero-content-static">
-        <h1 class="page-title">ישיבה קטנה – על שם הגאון הרב יצחק הוטנר זצ"ל</h1>
+        <h1 class="page-title">ישיבה לצעירים– על שם הגאון הרב יצחק הוטנר זצ"ל</h1>
         <p>מקום של תורה, יראת שמיים וגדילה רוחנית</p>
     </div>
     </section>
@@ -56,28 +60,28 @@
     <h2>תמונות</h2> 
     
     <div class="gallery-container">
-        <img src="./לאתר של חיים/תמונה 1.JPG" alt="תמונה 1">
-        <img src="./לאתר של חיים/תמונה 10.JPG" alt="תמונה 2">
-        <img src="./לאתר של חיים/תמונה 11.JPG" alt="תמונה 3">
-        <img src="./לאתר של חיים/תמונה 12.jpeg" alt="תמונה 4">
-        <img src="./לאתר של חיים/תמונה 13.jpeg" alt="תמונה 5">
-        <img src="./לאתר של חיים/תמונה 14.jpeg" alt="תמונה 6">
+        <img src="./assets/images1.JPG" alt="תמונה 1">
+        <img src="./assets/images2.JPG" alt="תמונה 2">
+        <img src="./assets/images3.JPG" alt="תמונה 3">
+        <img src="./assets/images4.JPG" alt="תמונה 4">
+        <img src="./assets/images5.JPG" alt="תמונה 5">
+        <img src="./assets/images6.JPG" alt="תמונה 6">
     </div>
 
     <div class="gallery-container hidden-group"> 
-        <img src="./לאתר של חיים/תמונה 2.JPG" alt="תמונה 7">
-        <img src="./לאתר של חיים/תמונה 3.JPG" alt="תמונה 8">
-        <img src="./לאתר של חיים/תמונה 4.JPG" alt="תמונה 9">
-        <img src="./לאתר של חיים/תמונה 5.JPG" alt="תמונה 10">
-        <img src="./לאתר של חיים/תמונה 6.JPG" alt="תמונה 11">
-        <img src="./לאתר של חיים/תמונה 7.JPG" alt="תמונה 12">
+        <img src="./assets/images7.JPG" alt="תמונה 7">
+        <img src="./assets/images8.JPG" alt="תמונה 8">
+        <img src="./assets/images9.JPG" alt="תמונה 9">
+        <img src="./assets/images10.JPG" alt="תמונה 10">
+        <img src="./assets/images11.JPG" alt="תמונה 11">
+        <img src="./assets/images12.jpeg" alt="תמונה 12">
     </div>
     <div class="gallery-container hidden-group"> 
-        <video src="./לאתר של חיים/סרטון 1.MP4" controls></video>
-        <video src="./לאתר של חיים/סרטון 2.MP4" controls></video>
-        <video src="./לאתר של חיים/MVI_1281.MP4" controls></video>
+        <video src="./assets/video1.MP4" autoplay muted loop playsinline></video>
+         <video src="./assets/video2.MP4" autoplay muted loop playsinline></video>
+         <video src="./assets/video3.MP4" autoplay muted loop playsinline></video>
     </div>
-
+<!--לבדוק מה הניטוב של הסרטונים ולשנות אותו-->
     <button 
     onclick="loadNextBatch()" 
     id="loadMoreButton"
