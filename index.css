@@ -1,7 +1,8 @@
 /* ------------------------------------ */
-/* עיצוב גלובלי (BODY)        */
+/* עיצוב גלובלי (BODY)        */
 /* ------------------------------------ */
 @import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@700&family=Heebo:wght@400;700&display=swap');
+
 body {
     margin: 0;
     /* שימוש בפונט Heebo לטקסט רגיל */
@@ -27,10 +28,9 @@ h2 {
     display: flex;
     justify-content: space-between; 
     align-items: center;
-    background:gray; 
+    background: gray; 
     padding: 10px 30px;
     color: white;
-    /* position: sticky; */
     top: 0;
     z-index: 1000;
 }
@@ -65,7 +65,6 @@ h2 {
 
 /* כפתור תרומה ושפה בניווט */
 .donate-nav-btn {
-    /* שימוש בעיצוב big-donate-btn לקישור ב-NAV */
     margin-inline-start: auto; 
     margin-inline-end: 10px; 
 }
@@ -89,11 +88,10 @@ h2 {
 }
 
 /* ------------------------------------ */
-/* כפתור תרומה גדול (BIG DONATE BUTTON)     */
+/* כפתור תרומה גדול (BIG DONATE BUTTON)     */
 /* ------------------------------------ */
 .big-donate-btn {
     display: inline-block; 
-    /* צבע רקע: אדום בוהק */
     background-color: #dc143c; 
     color: white !important; 
     padding: 15px 30px; 
@@ -105,14 +103,13 @@ h2 {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* אפקט ריחוף עכבר (Hover) */
 .big-donate-btn:hover {
     background-color: #a31030; 
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
 /* ------------------------------------ */
-/* באנר ראשי (HERO) - סליידר רקע קבוע            */
+/* באנר ראשי (HERO) - סליידר רקע קבוע            */
 /* ------------------------------------ */
 
 .hero {
@@ -121,7 +118,6 @@ h2 {
     min-height: 400px; 
 }
 
-/* מיכל תמונות הרקע */
 .hero-background {
     position: absolute;
     top: 0;
@@ -146,7 +142,6 @@ h2 {
     opacity: 1;
 }
 
-/* שכבת צבע מעל הרקע */
 .hero::before {
     content: '';
     position: absolute;
@@ -158,7 +153,6 @@ h2 {
     z-index: 20;
 }
 
-/* עיצוב הטקסט הקבוע */
 .hero-content-static {
     position: relative; 
     z-index: 30; 
@@ -170,11 +164,9 @@ h2 {
     text-align: center;
     color: white;
     padding: 10px 20px;
-    /* תיקון קל במיקום */
     transform: translateY(70px); 
 }
 
-/* גדלי טקסט בדסקטופ */
 .hero-content-static .page-title {
     font-size: 3.5em; 
     font-weight: 700; 
@@ -186,7 +178,6 @@ h2 {
     font-weight: 400; 
 }
 
-/* אפקט הצללה על הטקסט */
 .hero-content-static .page-title,
 .hero-content-static p {
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
@@ -194,7 +185,7 @@ h2 {
 }
 
 /* ------------------------------------ */
-/* קטעי תוכן (SECTIONS)       */
+/* קטעי תוכן (SECTIONS)       */
 /* ------------------------------------ */
 .section {
     width: 80%;
@@ -204,6 +195,7 @@ h2 {
     direction: rtl; 
     text-align: right;
 }
+
 p {
     font-size: 23px; 
     line-height: 1.7;
@@ -218,25 +210,21 @@ p {
     margin-bottom: 20px;
 }
 
-/* עיצוב אחיד לתמונות וסרטונים */
 .gallery-container img, 
 .gallery-container video {
-    /* חישוב של 3 בשורה פחות הרווחים (gap) */
     width: calc(33.333% - 15px); 
-    min-width: 280px; /* מונע מהם להיות קטנים מדי במובייל */
-    height: 200px;    /* גובה קבוע לכולם */
-    object-fit: cover; /* חותך את השוליים כדי שלא יהיה עיוות */
+    min-width: 280px;
+    height: 200px;
+    object-fit: cover;
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: block;
 }
 
-/* הסתרת הקבוצה השנייה */
 .hidden-group {
     display: none;
 }
 
-/* עיצוב הכפתור */
 #loadMoreButton {
     display: block;
     margin: 30px auto;
@@ -244,7 +232,7 @@ p {
     background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 50px; /* כפתור עגול ומודרני */
+    border-radius: 50px;
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
@@ -253,15 +241,11 @@ p {
 
 #loadMoreButton:hover {
     background-color: #0056b3;
-    transform: scale(1.05); /* אפקט קטן בריחופ */
-}
-
-#loadMoreButton:hover {
-    background-color: #0056b3;
+    transform: scale(1.05);
 }
 
 /* ------------------------------------ */
-/* אירועים (EVENTS)            */
+/* אירועים (EVENTS)            */
 /* ------------------------------------ */
 .events {
     display: flex;
@@ -280,7 +264,7 @@ p {
 }
 
 /* ------------------------------------ */
-/* צור קשר (CONTACT)              */
+/* צור קשר (CONTACT)              */
 /* ------------------------------------ */
 
 #contact {
@@ -329,10 +313,10 @@ p {
 }
 
 /* ------------------------------------ */
-/* FOOTER                              */
+/* FOOTER                              */
 /* ------------------------------------ */
-.footer{
-    background:gray; 
+.footer {
+    background: gray; 
     padding: 10px 30px;
     color: white;
 }
@@ -342,17 +326,13 @@ p {
 /* ---------------------------------------------------- */
 
 @media screen and (max-width: 768px) {
-    
-    /* --- כותרות וטקסט גלובלי --- */
     h2 {
         font-size: 2em; 
     }
 
-    /* --- ניווט (ההמבורגר) --- */
     .header {
-     position: sticky; 
+        position: sticky; 
         padding: 10px 15px;
-        /* משנה את סדר הפריטים לנייד: לוגו ימין, המבורגר שמאל */
         display: flex; 
         justify-content: space-between;
         flex-direction: row-reverse; 
@@ -361,7 +341,7 @@ p {
         order: 1; 
     }
     .menu-toggle {
-        display: block; /* **הצג את ההמבורגר** */
+        display: block;
         order: 2; 
     }
     
@@ -374,12 +354,10 @@ p {
         background: gray;
         flex-direction: column;
         align-items: stretch;
-        /* **הסתרת התפריט כברירת מחדל (יוצא מהמסך):** */
         transform: translateX(100%); 
         transition: transform 0.3s ease-out;
     }
     
-    /* **הצגת התפריט בלחיצה (מכניס אותו למסך):** */
     .nav.active {
         transform: translateX(0);
     }
@@ -392,12 +370,10 @@ p {
         margin: 10px 20px;
         text-align: center;
         width: auto;
-        /* מבטל את העיצוב הגדול של הכפתור כדי שיתאים ל-NAV */
         padding: 8px 12px;
         font-size: 16px;
     }
     
-    /* --- HERO SECTION --- */
     .hero {
         padding: 60px 20px; 
         min-height: 350px;
@@ -409,7 +385,6 @@ p {
         font-size: 1.2em;
     }
 
-    /* --- גלריה (Gallery) --- */
     .gallery-container {
         gap: 10px;
     }
@@ -421,7 +396,6 @@ p {
         height: auto;
     }
     
-    /* --- אירועים (EVENTS) --- */
     .events {
         flex-direction: column;
         gap: 15px;
@@ -431,7 +405,6 @@ p {
         width: 90%;
     }
 
-    /* --- סקשנים כלליים --- */
     .section {
         width: 100%;
         max-width: none; 
@@ -440,55 +413,75 @@ p {
         text-align: right;
     }
     
-    /* תיקון סקשן צור קשר (Contact) */
     #contact {
         padding: 30px 20px;
     }
 }
-/* 1. הסתרה מוחלטת במחשב */
+
 .mobile-quick-actions {
     display: none;
 }
 
-/* 2. הגדרות רק לטלפונים (מסכים עד 768 פיקסלים) */
 @media (max-width: 768px) {
     .mobile-quick-actions {
         display: flex;
-        justify-content: space-around; /* רווח שווה בין הכפתורים */
+        justify-content: space-around;
         align-items: center;
         background-color: #ffffff;
         padding: 10px;
         border-bottom: 2px solid #eeeeee;
-        position: sticky; /* נשאר דבוק למעלה כשגוללים */
+        position: sticky;
         top: 0;
-        z-index: 1000; /* שיהיה מעל הכל */
+        z-index: 1000;
         gap: 10px;
     }
 
     .quick-btn {
-        flex: 1; /* שהכפתורים יתחלקו שווה ברוחב */
+        flex: 1;
         text-align: center;
         padding: 12px 5px;
         border-radius: 10px;
         text-decoration: none;
         font-weight: bold;
-        font-size: 16px; /* גופן גדול וקריא למבוגרים */
+        font-size: 16px;
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
-    /* עיצוב כפתור תרומה - בולט וצבעוני */
     .donate-btn {
-        background-color: #28a745; /* ירוק */
+        background-color: #28a745;
         color: white !important;
     }
 
-    /* עיצוב כפתור תרגום - עדין יותר */
     .translate-btn {
         background-color: #f8f9fa;
         color: #333 !important;
         border: 1px solid #ccc;
     }
+}
 
-    /* הסתרת כפתור ה"המבורגר" המקורי אם הוא מפריע */
-    /* .navbar-toggler { display: none !important; } */
+/* ---------------------------------------------------- */
+/* 🌐 התאמה וכיוונון מיוחד לדף באנגלית (LTR)             */
+/* ---------------------------------------------------- */
+
+html[lang="en"] body {
+    direction: ltr;
+}
+
+html[lang="en"] .section {
+    direction: ltr;
+    text-align: left;
+}
+
+html[lang="en"] .section p,
+html[lang="en"] .event-card {
+    text-align: left;
+}
+
+html[lang="en"] .contact-form input,
+html[lang="en"] .contact-form textarea {
+    text-align: left;
+}
+
+html[lang="en"] h2 {
+    text-align: center; /* שומר על הכותרות במרכז הדף */
 }

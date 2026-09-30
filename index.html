@@ -59,49 +59,13 @@
     <section id="gallery" class="section">
     <h2>תמונות</h2> 
     
-    <div class="gallery-container">
-        <img src="./assets/images1.JPG" alt="תמונה 1">
-        <img src="./assets/images2.JPG" alt="תמונה 2">
-        <img src="./assets/images3.JPG" alt="תמונה 3">
-        <img src="./assets/images4.JPG" alt="תמונה 4">
-        <img src="./assets/images5.JPG" alt="תמונה 5">
-        <img src="./assets/images6.JPG" alt="תמונה 6">
-    </div>
+    <!-- כאן ה-JavaScript יכניס את התמונות והסרטונים באופן אוטומטי -->
+    <div id="gallery-container" class="gallery-container"></div>
 
-    <div class="gallery-container hidden-group"> 
-        <img src="./assets/images7.JPG" alt="תמונה 7">
-        <img src="./assets/images8.JPG" alt="תמונה 8">
-        <img src="./assets/images9.JPG" alt="תמונה 9">
-        <img src="./assets/images10.JPG" alt="תמונה 10">
-        <img src="./assets/images11.JPG" alt="תמונה 11">
-        <img src="./assets/images12.jpeg" alt="תמונה 12">
-    </div>
-    <div class="gallery-container hidden-group"> 
-        <video autoplay muted loop playsinline 
-           src="https://drive.google.com/uc?export=download&id=1tktYzeXK3aWbexaBljgq_YZNAUANu6wN">
-       </video>
-       <video autoplay muted loop playsinline 
-           src="https://drive.google.com/uc?export=download&id=168TJt85bw98EkEYJXV40hCBKNMipvBgs">
-       </video>
-        <video autoplay muted loop playsinline 
-           src="https://drive.google.com/uc?export=download&id=1Rsjp3mgrDwPVXbnJ2WS7-v9kIPJqEgTR">
-       </video>
-    </div>
-<!--לבדוק מה הניטוב של הסרטונים ולשנות אותו-->
-    <button 
-    onclick="loadNextBatch()" 
-    id="loadMoreButton"
-    
-    data-step1="לצפייה בתמונות נוספות"
-    data-step2="צפייה בסרטונים"
-    data-done="כל הגלריה הוצגה"
-    data-step3-hide="הסתר תמונות וסרטונים נוספים"
->
-    לצפייה בתמונות נוספות
-</button>
-    
-</section>
-
+    <button id="loadMoreButton" onclick="loadNextBatch()">
+        לצפייה בתמונות נוספות
+    </button>
+   </section>
     <section class="stats-section section">
         <h2 class="stats-title">תקציב ישיבת זרע יצחק - שנת הלימודים תשפ"ו</h2>
         <div class="stats-container">

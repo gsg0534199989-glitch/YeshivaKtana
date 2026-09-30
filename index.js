@@ -2,17 +2,14 @@
 // ** 1. ניווט רספונסיבי (תפריט המבורגר) **
 // ===================================
 function setupMobileMenu() {
-    // קבל את כפתור ההמבורגר ואת התפריט
     const menuToggle = document.getElementById('menuToggle');
     const mainNav = document.getElementById('mainNav');
 
     if (menuToggle && mainNav) {
         menuToggle.addEventListener('click', function() {
-            // הוסף או הסר את class 'active' כדי להציג/להסתיר את התפריט
             mainNav.classList.toggle('active');
         });
         
-        // סגור את התפריט בלחיצה על קישור (כדי שלא ישאר פתוח)
         mainNav.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 if (mainNav.classList.contains('active')) {
@@ -24,44 +21,86 @@ function setupMobileMenu() {
 }
 
 // ===================================
-// ** 2. טעינת תוכן גלריה נוסף **
+// ** 2. גלריה דינמית וטעינת תוכן **
 // ===================================
+
+// רשימת כל התמונות והסרטונים - פשוט מוסיפים/מעדכנים כאן!
+const galleryData = [
+  // תמונות
+  { type: 'image', src: './assets/images1.JPG', alt: 'תמונה 1' },
+  { type: 'image', src: './assets/images2.JPG', alt: 'תמונה 2' },
+  { type: 'image', src: './assets/images3.JPG', alt: 'תמונה 3' },
+  { type: 'image', src: './assets/images4.JPG', alt: 'תמונה 4' },
+  { type: 'image', src: './assets/images5.JPG', alt: 'תמונה 5' },
+  { type: 'image', src: './assets/images6.JPG', alt: 'תמונה 6' },
+  { type: 'image', src: './assets/images7.JPG', alt: 'תמונה 7' },
+  { type: 'image', src: './assets/images8.JPG', alt: 'תמונה 8' },
+  { type: 'image', src: './assets/images9.JPG', alt: 'תמונה 9' },
+  { type: 'image', src: './assets/images10.JPG', alt: 'תמונה 10' },
+  { type: 'image', src: './assets/images11.JPG', alt: 'תמונה 11' },
+  { type: 'image', src: './assets/images12.jpeg', alt: 'תמונה 12' },
+  { type: 'image', src: './assets/images13.jpeg', alt: 'תמונה 13' },
+  { type: 'image', src: './assets/images14.jpeg', alt: 'תמונה 14' },
+  { type: 'image', src: './assets/images15.jpg', alt: 'תמונה 15' },
+  { type: 'image', src: './assets/images16.jpg', alt: 'תמונה 16' },
+  { type: 'image', src: './assets/images17.jpg', alt: 'תמונה 17' },
+  { type: 'image', src: './assets/images18.jpg', alt: 'תמונה 18' },
+  { type: 'image', src: './assets/images19.jpg', alt: 'תמונה 19' },
+
+  // סרטונים (מופיעים בסוף)
+  { type: 'video', src: './assets/video1.mp4' },
+  { type: 'video', src: './assets/video2.mp4' },
+  { type: 'video', src: './assets/video3.mp4' }
+];
+
+let currentIndex = 0;
+const itemsPerPage = 6; // כמות הפריטים שנטענים בכל בלוק
+
 function loadNextBatch() {
-    var hiddenGroups = document.querySelectorAll('.hidden-group');
-    var button = document.getElementById("loadMoreButton");
-    var nextGroup = null;
+    const container = document.getElementById('gallery-container');
+    const button = document.getElementById("loadMoreButton");
     
-    function getButtonText(step) {
-        return button.getAttribute('data-' + step);
-    }
-    
-    var visibleGroupsCount = Array.from(hiddenGroups).filter(group => group.style.display === "flex").length;
+    if (!container || !button) return;
 
-    // **מצב 3: הסתר הכל (כאשר לחצו על הכפתור והכל כבר מוצג)**
-    if (visibleGroupsCount === hiddenGroups.length) {
-        hiddenGroups.forEach(group => {
-            group.style.display = "none";
-        });
-        button.innerHTML = getButtonText('step1'); // חזור לטקסט ההתחלתי
-        return; 
+    const isEnglish = document.documentElement.lang === 'en';
+
+    // אם הוצגו כבר כל הפריטים - הלחיצה הבאה תאפס ותחזיר למצב ההתחלתי
+    if (currentIndex >= galleryData.length) {
+        container.innerHTML = '';
+        currentIndex = 0;
+        loadNextBatch();
+        return;
     }
 
-    // **מצב 1/2: חשיפת הקבוצה הבאה**
-    for (var i = 0; i < hiddenGroups.length; i++) {
-        if (hiddenGroups[i].style.display === "none" || hiddenGroups[i].style.display === "") {
-            nextGroup = hiddenGroups[i];
-            nextGroup.style.display = "flex";
-            
-            // עדכון הכפתור למצב הבא
-            if (i === 0) {
-                // אם חשיפה ראשונה (תמונות נוספות), הטקסט הבא הוא "צפייה בסרטונים"
-                button.innerHTML = getButtonText('step2'); 
-            } else if (i === 1) {
-                // אם חשיפה שנייה (סרטונים), הטקסט הבא הוא "הסתר הכל"
-                button.innerHTML = getButtonText('step3-hide');
-            }
-            break; 
+    // טעינת 6 הפריטים הבאים מהרשימה
+    const nextItems = galleryData.slice(currentIndex, currentIndex + itemsPerPage);
+
+    nextItems.forEach(item => {
+        if (item.type === 'image') {
+            const img = document.createElement('img');
+            img.src = item.src;
+            img.alt = item.alt || 'תמונה';
+            container.appendChild(img);
+        } else if (item.type === 'video') {
+            const video = document.createElement('video');
+            video.src = item.src;
+            video.autoplay = true;
+            video.muted = true;
+            video.loop = true;
+            video.playsInline = true;
+            container.appendChild(video);
         }
+    });
+
+    currentIndex += itemsPerPage;
+
+    // עדכון ניסוח הכפתור בצורה פשוטה ואחידה
+    if (currentIndex >= galleryData.length) {
+        // כשכל הגלריה פתוחה
+        button.innerHTML = isEnglish ? "Hide Photos & Videos" : "הסתר תמונות וסרטונים";
+    } else {
+        // כשיש עוד פריטים בדרך להציג
+        button.innerHTML = isEnglish ? "View More Photos & Videos" : "לצפייה בתמונות וסרטונים נוספים";
     }
 }
 
@@ -72,21 +111,16 @@ function startBackgroundSlideshow() {
     const images = document.querySelectorAll('.hero-background img');
     let currentIndex = 0; 
 
-    if (images.length === 0) {
-        return; 
-    }
+    if (images.length === 0) return; 
 
     function rotateImage() {
         images[currentIndex].classList.remove('active');
-        currentIndex = (currentIndex + 1) % images.length; // לולאה אינסופית
+        currentIndex = (currentIndex + 1) % images.length;
         images[currentIndex].classList.add('active');
     }
 
-    // ודא שהתמונה הראשונה פעילה בהתחלה
     images[0].classList.add('active'); 
-
-    // הפעל את הפונקציה כל 8000 מילישניות (8 שניות)
-    const slideshowInterval = setInterval(rotateImage, 8000); 
+    setInterval(rotateImage, 8000); 
 }
 
 // ===================================
@@ -95,4 +129,5 @@ function startBackgroundSlideshow() {
 window.onload = function() {
     setupMobileMenu();
     startBackgroundSlideshow();
+    loadNextBatch(); // טעינת 6 הפריטים הראשונים
 };
