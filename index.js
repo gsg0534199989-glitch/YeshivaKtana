@@ -52,7 +52,7 @@ const galleryData = [
   { type: 'image', src: './assets/images23.jpg', alt: 'תמונה 23' },
   { type: 'image', src: './assets/images24.JPG', alt: 'תמונה 24' },
   { type: 'image', src: './assets/images25.JPG', alt: 'תמונה 25' },
-  { type: 'image', src: './assets/images26.jpg', alt: 'תמונה 26' },
+  { type: 'image', src: './assets/images26.JPG', alt: 'תמונה 26' },
   { type: 'image', src: './assets/images27.JPG', alt: 'תמונה 27' },
   { type: 'image', src: './assets/images28.JPG', alt: 'תמונה 28' },
   { type: 'image', src: './assets/images29.JPG', alt: 'תמונה 29' },
