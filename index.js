@@ -24,7 +24,7 @@ function setupMobileMenu() {
 // ** 2. גלריה דינמית וטעינת תוכן **
 // ===================================
 
-// רשימת כל התמונות והסרטונים - פשוט מוסיפים/מעדכנים כאן!
+// רשימת המדיה - מוסיפים/מוחקים קבצים ישירות מכאן!
 const galleryData = [
   // תמונות
   { type: 'image', src: './assets/images1.JPG', alt: 'תמונה 1' },
@@ -46,15 +46,26 @@ const galleryData = [
   { type: 'image', src: './assets/images17.jpg', alt: 'תמונה 17' },
   { type: 'image', src: './assets/images18.jpg', alt: 'תמונה 18' },
   { type: 'image', src: './assets/images19.jpg', alt: 'תמונה 19' },
+  { type: 'image', src: './assets/images20.JPG', alt: 'תמונה 20' },
+  { type: 'image', src: './assets/images21.JPG', alt: 'תמונה 21' },
+  { type: 'image', src: './assets/images22.JPG', alt: 'תמונה 22' },
+  { type: 'image', src: './assets/images23.JPG', alt: 'תמונה 23' },
+  { type: 'image', src: './assets/images24.JPG', alt: 'תמונה 24' },
+  { type: 'image', src: './assets/images25.JPG', alt: 'תמונה 25' },
+  { type: 'image', src: './assets/images26.jpg', alt: 'תמונה 26' },
+  { type: 'image', src: './assets/images27.JPG', alt: 'תמונה 27' },
+  { type: 'image', src: './assets/images28.JPG', alt: 'תמונה 28' },
+  { type: 'image', src: './assets/images29.JPG', alt: 'תמונה 29' },
+  { type: 'image', src: './assets/images30.JPG', alt: 'תמונה 30' },
 
-  // סרטונים (מופיעים בסוף)
+  // סרטונים (מומלץ לשמור מקומית בתוך תיקיית assets)
   { type: 'video', src: './assets/video1.mp4' },
   { type: 'video', src: './assets/video2.mp4' },
   { type: 'video', src: './assets/video3.mp4' }
 ];
 
 let currentIndex = 0;
-const itemsPerPage = 6; // כמות הפריטים שנטענים בכל בלוק
+const itemsPerPage = 6; // כמה פריטים להציג בכל לחיצה
 
 function loadNextBatch() {
     const container = document.getElementById('gallery-container');
@@ -62,9 +73,7 @@ function loadNextBatch() {
     
     if (!container || !button) return;
 
-    const isEnglish = document.documentElement.lang === 'en';
-
-    // אם הוצגו כבר כל הפריטים - הלחיצה הבאה תאפס ותחזיר למצב ההתחלתי
+    // מקרה מיוחד: אם כבר הוצגו כל הפריטים, הלחיצה הבאה תנקה ותחזיר למצב ההתחלתי
     if (currentIndex >= galleryData.length) {
         container.innerHTML = '';
         currentIndex = 0;
@@ -72,7 +81,7 @@ function loadNextBatch() {
         return;
     }
 
-    // טעינת 6 הפריטים הבאים מהרשימה
+    // חיתוך הפריטים של המנה הנוכחית
     const nextItems = galleryData.slice(currentIndex, currentIndex + itemsPerPage);
 
     nextItems.forEach(item => {
@@ -94,13 +103,13 @@ function loadNextBatch() {
 
     currentIndex += itemsPerPage;
 
-    // עדכון ניסוח הכפתור בצורה פשוטה ואחידה
+    // עדכון הטקסט של הכפתור לפי המצב
     if (currentIndex >= galleryData.length) {
-        // כשכל הגלריה פתוחה
-        button.innerHTML = isEnglish ? "Hide Photos & Videos" : "הסתר תמונות וסרטונים";
+        button.innerHTML = "הסתר תמונות וסרטונים נוספים";
+    } else if (currentIndex === itemsPerPage) {
+        button.innerHTML = "צפייה בסרטונים";
     } else {
-        // כשיש עוד פריטים בדרך להציג
-        button.innerHTML = isEnglish ? "View More Photos & Videos" : "לצפייה בתמונות וסרטונים נוספים";
+        button.innerHTML = "לצפייה בתמונות נוספות";
     }
 }
 
@@ -111,7 +120,9 @@ function startBackgroundSlideshow() {
     const images = document.querySelectorAll('.hero-background img');
     let currentIndex = 0; 
 
-    if (images.length === 0) return; 
+    if (images.length === 0) {
+        return; 
+    }
 
     function rotateImage() {
         images[currentIndex].classList.remove('active');
@@ -129,5 +140,5 @@ function startBackgroundSlideshow() {
 window.onload = function() {
     setupMobileMenu();
     startBackgroundSlideshow();
-    loadNextBatch(); // טעינת 6 הפריטים הראשונים
+    loadNextBatch(); // טעינה ראשונית של 6 הפריטים הראשונים בגלריה
 };
