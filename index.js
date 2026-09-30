@@ -24,7 +24,7 @@ function setupMobileMenu() {
 // ** 2. גלריה דינמית וטעינת תוכן **
 // ===================================
 
-// רשימת המדיה - מוסיפים/מוחקים קבצים ישירות מכאן!
+// רשימת המדיה - לוודא ששמות הקבצים והסיומות (JPG/jpg/jpeg) תואמים בדיוק לתיקיית assets!
 const galleryData = [
   // תמונות
   { type: 'image', src: './assets/images1.JPG', alt: 'תמונה 1' },
@@ -58,14 +58,14 @@ const galleryData = [
   { type: 'image', src: './assets/images29.JPG', alt: 'תמונה 29' },
   { type: 'image', src: './assets/images30.JPG', alt: 'תמונה 30' },
 
-  // סרטונים (מומלץ לשמור מקומית בתוך תיקיית assets)
+  // סרטונים
   { type: 'video', src: './assets/video1.mp4' },
   { type: 'video', src: './assets/video2.mp4' },
   { type: 'video', src: './assets/video3.mp4' }
 ];
 
 let currentIndex = 0;
-const itemsPerPage = 6; // כמה פריטים להציג בכל לחיצה
+const itemsPerPage = 6; // כמות פריטים בטעינה
 
 function loadNextBatch() {
     const container = document.getElementById('gallery-container');
@@ -73,7 +73,7 @@ function loadNextBatch() {
     
     if (!container || !button) return;
 
-    // מקרה מיוחד: אם כבר הוצגו כל הפריטים, הלחיצה הבאה תנקה ותחזיר למצב ההתחלתי
+    // מקרה שבו הוצגו כבר כל הפריטים - לחיצה נוספת תסגור/תאפס את הגלריה
     if (currentIndex >= galleryData.length) {
         container.innerHTML = '';
         currentIndex = 0;
@@ -81,7 +81,7 @@ function loadNextBatch() {
         return;
     }
 
-    // חיתוך הפריטים של המנה הנוכחית
+    // חיתוך הפריטים במנה הנוכחית
     const nextItems = galleryData.slice(currentIndex, currentIndex + itemsPerPage);
 
     nextItems.forEach(item => {
@@ -103,13 +103,11 @@ function loadNextBatch() {
 
     currentIndex += itemsPerPage;
 
-    // עדכון הטקסט של הכפתור לפי המצב
+    // עדכון טקסט הכפתור דינמית
     if (currentIndex >= galleryData.length) {
-        button.innerHTML = "הסתר תמונות וסרטונים נוספים";
-    } else if (currentIndex === itemsPerPage) {
-        button.innerHTML = "צפייה בסרטונים";
+        button.innerHTML = "הסתר תמונות וסרטונים";
     } else {
-        button.innerHTML = "לצפייה בתמונות נוספות";
+        button.innerHTML = "לצפייה בתמונות וסרטונים נוספים";
     }
 }
 
@@ -140,5 +138,5 @@ function startBackgroundSlideshow() {
 window.onload = function() {
     setupMobileMenu();
     startBackgroundSlideshow();
-    loadNextBatch(); // טעינה ראשונית של 6 הפריטים הראשונים בגלריה
+    loadNextBatch(); // טעינה ראשונית
 };
