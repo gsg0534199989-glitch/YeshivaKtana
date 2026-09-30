@@ -47,7 +47,7 @@ const galleryData = [
   { type: 'image', src: './assets/images18.JPG', alt: 'תמונה 18' },
   { type: 'image', src: './assets/images19.jpg', alt: 'תמונה 19' },
   { type: 'image', src: './assets/images20.JPG', alt: 'תמונה 20' },
-  { type: 'image', src: './assets/images21.jpg"', alt: 'תמונה 21' },
+  { type: 'image', src: './assets/images21.jpg', alt: 'תמונה 21' },
   { type: 'image', src: './assets/images22.JPG', alt: 'תמונה 22' },
   { type: 'image', src: './assets/images23.jpg', alt: 'תמונה 23' },
   { type: 'image', src: './assets/images24.JPG', alt: 'תמונה 24' },
