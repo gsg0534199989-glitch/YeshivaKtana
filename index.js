@@ -59,9 +59,9 @@ const galleryData = [
   { type: 'image', src: './assets/images30.JPG', alt: 'תמונה 30' },
 
   // סרטונים
-  { type: 'video', src: './assets/video1.mp4' },
-  { type: 'video', src: './assets/video2.mp4' },
-  { type: 'video', src: './assets/video3.mp4' }
+{ type: 'video', src: './assets/video1.MP4' },
+{ type: 'video', src: './assets/video2.MP4' },
+{ type: 'video', src: './assets/video3.MP4' },
 ];
 
 let currentIndex = 0;
